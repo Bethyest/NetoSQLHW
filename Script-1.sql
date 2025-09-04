@@ -5,7 +5,8 @@ values
     ('Deftones'),
     ('Lady Gaga'),
     ('Billie Eilish'),
-    ('Neneh Cherry');
+    ('Neneh Cherry'),
+    ('Noname');
 insert into Genre(genre_name)
 values
     ('Rock'),
@@ -19,7 +20,8 @@ values
     (2, 4), (2, 1), 
     (3, 1), (3, 5),
     (4, 1), (4, 2), (4, 4),
-    (5, 2), (5, 4);
+    (5, 2), (5, 4),
+    (7, 2);
 insert into Album(album_name, release_year)
 values
     ('ПРОСТИ МЕНЯ МОЯ ЛЮБОВЬ', 2000),
@@ -32,14 +34,16 @@ values
     ('Born This Way', 2011),
     ('WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?', 2019),
     ('Happier Than Ever', 2021),
-    ('HIT ME HARD AND SOFT', 2024);
+    ('HIT ME HARD AND SOFT', 2024),
+    ('Test album', 2025);
 insert into AuthorAlbum
 values
     (1, 1), (1, 2),
     (2, 3), (2, 4), 
     (3, 5), (3, 6),
     (4, 7), (4, 8),
-    (5, 9), (5, 10), (5, 11);
+    (5, 9), (5, 10), (5, 11),
+    (7, 12);
 insert into Song(song_name, song_duration, album_id)
 values
     ('Хочешь?', 198, 1),
@@ -63,7 +67,14 @@ values
     ('my future', 210, 10),
     ('NDA', 195, 10),
     ('SKINNY', 239, 11),
-    ('CHIHIRO', 303, 11);
+    ('CHIHIRO', 303, 11),
+    ('myself', 222, 12),
+    ('by myself', 222, 12),
+    ('bemy self', 333, 12),
+    ('myself by', 212, 12),
+    ('by myself by', 111, 12),
+    ('beemy', 121, 12),
+    ('premyne', 113, 12);
 insert into Collection(collection_name, release_year)
 values
     ('Golden 2000-s', 2020),
@@ -78,4 +89,5 @@ values
     (4, 5), (4, 4), (4, 7), (4, 8), (4, 9), (4, 10);
     
     
+
 
