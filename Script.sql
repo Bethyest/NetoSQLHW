@@ -29,7 +29,7 @@ create table if not exists AuthorAlbum (
 create table if not exists Song (
     id serial primary key,
     song_name varchar(100) not null,
-    song_duration decimal(10, 2) not null,
+    song_duration integer not null,
     album_id integer references Album(id)
 );
 
@@ -42,6 +42,8 @@ create table if not exists Collection (
 create table if not exists SongCollection (
     song_id integer not null references Song(id),
     collection_id integer not null references Collection(id)
+    constraint pppk primary key (song_id, collection_id)
 );
     
+
 
