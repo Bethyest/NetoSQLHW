@@ -11,11 +11,13 @@ join song s on s.album_id = a.id
 group by a.album_name 
 
 
-select a2.author_name from authoralbum a 
-join author a2 on a.author_id = a2.id
-join album a3 on a3.id = a.album_id 
-where a3.release_year != 2020
-group by a2.author_name 
+select author_name from author a
+where a.author_name not in (
+	select author_name from author a
+	join authoralbum a2 on a2.author_id = a.id
+	join album a3 on a3.id = a2.album_id 
+	where a3.release_year = 2020
+);
 
 select c.collection_name from songcollection s  
 join collection c on c.id = s.collection_id 
