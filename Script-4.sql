@@ -15,13 +15,15 @@ join song s on s.album_id = a3.id
 where s.song_duration = (select min(song_duration) from song s)
 group by a.author_name
 
-select album_name from album a
-join song s on a.id = s.album_id
-join (select album_id, count(*) from song
-group by album_id) b on a.id = b.album_id
-where b.count = (select min(count) from(
-select album_id, count(*) from song
-group by album_id ))
-group by a.album_name 
+with middle as (
+	select album_id, count(*) as c from song
+	group by album_id
+)
+select album_name from middle m
+join album a on a.id = m.album_id
+where m.c = (
+	select min(c) from middle
+);
  
+
 
