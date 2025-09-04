@@ -41,9 +41,10 @@ create table if not exists Collection (
 
 create table if not exists SongCollection (
     song_id integer not null references Song(id),
-    collection_id integer not null references Collection(id)
+    collection_id integer not null references Collection(id),
     constraint pppk primary key (song_id, collection_id)
 );
     
+
 
 
